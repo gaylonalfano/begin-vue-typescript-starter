@@ -5,10 +5,10 @@
     <h1>Counter</h1>
     <div>
       <h3>{{ counter }}</h3>
-      <button @click="increment">+</button>
-      <button @click="decrement">-</button>
-      <!-- <button @click="counter++">+</button> -->
-      <!-- <button @click="counter--">-</button> -->
+      <!-- <button @click="increment">+</button> -->
+      <!-- <button @click="decrement">-</button> -->
+      <button @click="counter++">+</button>
+      <button @click="counter--">-</button>
     </div>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
