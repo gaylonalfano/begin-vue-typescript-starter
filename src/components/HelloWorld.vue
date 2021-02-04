@@ -2,6 +2,14 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h1>test: {{ test }}</h1>
+    <h1>Counter</h1>
+    <div>
+      <h3>{{ counter }}</h3>
+      <!-- <button @click="increment">+</button> -->
+      <!-- <button @click="decrement">-</button> -->
+      <button @click="counter++">+</button>
+      <button @click="counter--">-</button>
+    </div>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -112,13 +120,25 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "HelloWorld",
   props: {
     msg: String,
     test: String
+  },
+  setup() {
+    const counter = ref<number>(0);
+
+    function increment() {
+      return counter.value++;
+    }
+    function decrement() {
+      return counter.value--;
+    }
+
+    return { counter, increment, decrement };
   }
 });
 </script>
